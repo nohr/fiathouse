@@ -1,0 +1,171 @@
+@use "../../styles/mixin.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--global-padding-left) 0 var(--global-padding-right);
+  width: 100%;
+  height: 100dvh;
+  min-height: 860px;
+  justify-content: flex-end;
+  z-index: 1;
+  position: relative;
+
+  h2 {
+    margin: auto 0;
+    font-size: 16vw;
+    letter-spacing: -0.5vw;
+  }
+
+  @include mixin.desktop {
+    h2 {
+      font-size: 8.8vw;
+      span {
+        display: inline-block;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    gap: 1rem;
+    max-width: 1520px;
+
+    div label {
+      font-weight: 300;
+      user-select: none;
+      cursor: text;
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+      display: block;
+    }
+
+    div:not(:last-of-type) {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      border-bottom: 0.65rem solid;
+
+      input {
+        background-color: transparent;
+      }
+
+      &:nth-of-type(1) {
+        width: 80%;
+        border-color: var(--red) !important;
+      }
+      &:nth-of-type(2) {
+        width: 95%;
+        border-color: var(--orange) !important;
+      }
+      &:nth-of-type(3) {
+        width: 60%;
+        border-color: var(--blue) !important;
+      }
+      &:nth-of-type(4) {
+        width: 75%;
+        border-color: var(--green) !important;
+      }
+
+      @include mixin.desktop {
+        border-bottom: 1.5rem solid;
+      }
+    }
+
+    div:last-of-type {
+      display: flex;
+      flex-direction: column;
+      padding-top: 1rem;
+      gap: 1rem;
+
+      p {
+        font-size: 1.5rem;
+      }
+
+      @include mixin.desktop {
+        flex-direction: row;
+        align-items: center;
+
+        p {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+
+  footer {
+    padding: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2rem;
+
+    @include mixin.desktop {
+      gap: 1rem;
+      flex-direction: row;
+      padding: 2rem 0 3rem;
+    }
+
+    div,
+    address {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    address {
+      gap: 0.75rem;
+      justify-content: flex-end;
+      a {
+        font-size: 1.5rem;
+        width: fit-content;
+      }
+      p {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+      }
+    }
+
+    .icons {
+      justify-content: flex-end;
+      & div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+
+        @include mixin.desktop {
+          gap: 1rem;
+          img:nth-of-type(1) {
+            width: 2.5rem;
+            height: 2.5rem;
+          }
+
+          img:nth-of-type(2) {
+            width: 6rem;
+            height: 2.5rem;
+          }
+
+          img:nth-of-type(3) {
+            width: 4rem;
+            height: 2.5rem;
+          }
+        }
+      }
+      p,
+      a {
+        font-size: 0.35rem;
+        text-transform: uppercase;
+      }
+
+      @include mixin.desktop {
+        p,
+        a {
+          font-size: 0.6rem;
+        }
+      }
+    }
+  }
+}

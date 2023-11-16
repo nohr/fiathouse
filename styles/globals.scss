@@ -1,0 +1,71 @@
+@use "./mixin.scss" as mixin;
+@import "./reset.scss";
+
+:root {
+  --max-width: 1100px;
+  --global-padding-left: 1.5rem;
+  --global-padding-right: calc(10dvw + 1.5rem);
+  --light-purple: #9262de;
+  --purple: #3b3483;
+  --dark-purple: #172267;
+  --orange: #ea781e;
+  --blue: #54b8f2;
+  --green: #60d3a2;
+  --red: #ef0021;
+  --yellow: #ffd81e;
+  --light-yellow: #ffe56a;
+
+  @include mixin.desktop {
+    --global-padding-left: 4rem;
+    --global-padding-right: calc(27.66dvw + 4rem);
+  }
+}
+
+html {
+  overflow-y: scroll;
+  overscroll-behavior: none;
+  background: var(--purple);
+}
+
+body {
+  position: relative;
+  overflow: hidden;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  color: #fff;
+}
+
+h1,
+h2 {
+  font-weight: 100;
+  span {
+    display: block;
+  }
+  span:nth-child(2) {
+    font-weight: 600;
+  }
+}
+
+button {
+  font-size: 1.5rem;
+  width: fit-content;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  color: var(--purple);
+  background-color: var(--yellow);
+}
+
+@include mixin.desktop {
+  button {
+    font-size: 2rem;
+  }
+}
+
+input,
+button {
+  outline: transparent;
+}
